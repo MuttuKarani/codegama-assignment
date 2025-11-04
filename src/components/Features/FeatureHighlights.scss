@@ -1,0 +1,112 @@
+@import "variables";
+@import "mixins";
+
+.feature-highlights {
+  padding: 6rem 2rem;
+  text-align: center;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 255, 110, 0.05),
+    $background-color
+  );
+  color: #fff;
+
+  .feature-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-left: 1px dashed rgba(255, 255, 255, 0.06);
+    border-right: 1px dashed rgba(255, 255, 255, 0.06);
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    &::before {
+      left: 33.3%;
+    }
+
+    &::after {
+      left: 66.6%;
+    }
+  }
+
+  .feature-box {
+    flex: 1;
+    padding: 0 1rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+
+    img {
+      width: 64px;
+      height: auto;
+      margin-bottom: 1.25rem;
+      filter: drop-shadow(0 4px 10px rgba(0, 255, 110, 0.2));
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+
+    &:hover {
+      transform: translateY(-6px);
+      img {
+        filter: drop-shadow(0 6px 14px rgba(0, 255, 110, 0.4));
+      }
+    }
+  }
+
+  /* ✅ MOBILE: Stack vertically one by one */
+  @include respond-mobile {
+    padding: 4rem 1rem;
+
+    .feature-container {
+      flex-direction: column;
+      align-items: center;
+      border: none;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+
+    .feature-box {
+      width: 100%;
+      max-width: 360px;
+      padding: 2rem 0;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+  }
+}

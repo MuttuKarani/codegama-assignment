@@ -1,0 +1,159 @@
+.manage-footer {
+  position: relative;
+  padding: 6rem 1rem;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+
+  .manage-content {
+    width: 90%;
+    max-width: 1300px;
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .manage-left {
+    flex: 1;
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .manage-sub {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+
+      p {
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.6;
+        font-size: 1rem;
+      }
+
+      .arrow-icon {
+        width: 36px;
+        flex-shrink: 0;
+      }
+    }
+
+    /* --- Social Icons --- */
+    .social-icons {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1rem;
+
+      a {
+        background: rgba(255, 255, 255, 0.06);
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        transition: background 0.3s ease, transform 0.3s ease;
+
+        img {
+          width: 18px;
+          height: 18px;
+          object-fit: contain;
+        }
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.12);
+          transform: translateY(-4px);
+        }
+      }
+    }
+
+    .footer-credit {
+      margin-top: 1.25rem;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+    }
+  }
+
+  .footer-divider {
+    width: 1px;
+    height: 200px;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.08),
+      transparent
+    );
+  }
+
+  .manage-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    h4 {
+      font-size: 1.3rem;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .app-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      img {
+        width: 220px;
+        cursor: pointer;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+
+        &:hover {
+          transform: scale(1.05);
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+
+  .privacy-text {
+    position: absolute;
+    right: 2rem;
+    bottom: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+  }
+
+  /* --- Responsive --- */
+  @include respond-mobile {
+    padding: 4rem 1rem;
+
+    .manage-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 2rem;
+    }
+
+    .footer-divider {
+      display: none;
+    }
+
+    .manage-right .app-buttons {
+      align-items: center;
+      img {
+        width: 180px;
+      }
+    }
+
+    .privacy-text {
+      position: static;
+      margin-top: 1rem;
+    }
+  }
+}

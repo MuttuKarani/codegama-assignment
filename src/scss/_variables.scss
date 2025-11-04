@@ -1,4 +1,28 @@
-$primary-color: #f9f9f957;
-$text-color: #333;
+// File: src/scss/_variables.scss
+// Color and spacing system
+$primary-color: #00ff6a; // vivid green accent
+$primary-color-contrast: #00230f;
 $background-color: #070707;
-$font-family: "Poppins", sans-serif;
+$text-color: #e6e6e6;
+$muted: rgba(255, 255, 255, 0.7);
+$card-bg: #0b0b0b;
+$glass: rgba(255, 255, 255, 0.04);
+$radius-lg: 1.5rem;
+$radius-md: 0.75rem;
+$max-width: 1200px;
+$gap-lg: 3rem;
+$gap-md: 1.5rem;
+$gap-sm: 1rem;
+
+// Breakpoints
+$bp-desktop: 1200px;
+$bp-tablet: 992px;
+$bp-mobile: 768px;
+$bp-small: 480px;
+
+// CSS variables for runtime theming (keeps SCSS variables too)
+:root {
+  --primary: #{$primary-color};
+  --bg: #{$background-color};
+  --text: #{$text-color};
+}

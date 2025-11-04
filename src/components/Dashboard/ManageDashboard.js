@@ -1,5 +1,5 @@
 import React from "react";
-import "../scss/custom.scss";
+import "../../scss/custom.scss";
 
 const ManageDashboard = () => {
   return (

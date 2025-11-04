@@ -1,5 +1,6 @@
 import React from "react";
-import "../scss/custom.scss";
+import { Link } from "react-router-dom";
+import "../../scss/custom.scss";
 
 const NavBar = () => {
   return (
@@ -11,16 +12,16 @@ const NavBar = () => {
 
         <ul className="nav-links">
           <li>
-            <a href="#">Features</a>
+            <Link to="/features">Features</Link>
           </li>
           <li>
-            <a href="#">Resources</a>
+            <Link to="/resources">Resources</Link>
           </li>
           <li>
-            <a href="#">Comparison</a>
+            <Link to="/comparison">Comparison</Link>
           </li>
           <li>
-            <a href="#">Blogs</a>
+            <Link to="/blogs">Blogs</Link>
           </li>
         </ul>
       </div>

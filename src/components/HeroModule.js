@@ -1,6 +1,6 @@
 import React from "react";
 import "../scss/custom.scss";
-import NavBar from "./NavBar";
+import NavBar from "./Navbar/NavBar";
 
 const HeroModule = () => {
   return (
@@ -18,7 +18,8 @@ const HeroModule = () => {
       {/*Hero Content */}
       <div className="hero-content">
         <p className="hero-badge">
-          Raised $1.5 Million funding • <a href="#">Read More →</a>
+          Raised $1.5 Million funding •{" "}
+          <a href="/funding-details">Read More →</a>
         </p>
 
         <h1>Manage your sales and analytics at one place</h1>
@@ -28,8 +29,8 @@ const HeroModule = () => {
         </p>
 
         <div className="hero-buttons">
-          <button className="button button-white">Buy Template</button>
-          <button className="button">Book Demo</button>
+          <button className="button ">Buy Template</button>
+          <button className="button button-white">Book Demo</button>
         </div>
       </div>
     </section>

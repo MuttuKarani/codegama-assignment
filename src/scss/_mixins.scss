@@ -1,9 +1,32 @@
-@mixin transition($props: all, $time: 0.3s, $ease: ease-in-out) {
+// File: src/scss/_mixins.scss
+
+// Responsive mixins
+@mixin respond-desktop {
+  @media (min-width: $bp-desktop) {
+    @content;
+  }
+}
+
+@mixin respond-tablet {
+  @media (max-width: #{ $bp-desktop - 1px }) and (min-width: $bp-mobile) {
+    @content;
+  }
+}
+
+@mixin respond-mobile {
+  @media (max-width: $bp-mobile) {
+    @content;
+  }
+}
+
+// Transition helper
+@mixin transition($props: all, $time: 0.25s, $ease: ease) {
   transition: $props $time $ease;
 }
 
-@mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+// Card base style
+@mixin card-base {
+  background: $card-bg;
+  border-radius: $radius-lg;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.6);
 }
