@@ -1,0 +1,112 @@
+@import "variables";
+@import "mixins";
+
+.advanced-features {
+  padding: 6rem 1rem;
+  background: $background-color;
+  color: #fff;
+
+  .feature-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+
+    // Vertical dashed divider
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.08) 0,
+        rgba(255, 255, 255, 0.08) 1px,
+        transparent 1px,
+        transparent 8px
+      );
+      transform: translateX(-50%);
+    }
+
+    @include respond-tablet {
+      flex-direction: column;
+      align-items: center;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .feature-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    &.left {
+      padding-right: 3rem;
+      align-items: flex-start;
+    }
+
+    &.right {
+      padding-left: 3rem;
+      align-items: flex-start;
+    }
+  }
+
+  .feature-item {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    .feature-text {
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+
+      p {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 0.95rem;
+        line-height: 1.5;
+        max-width: 90%;
+      }
+    }
+
+    img {
+      width: 100%;
+      max-width: 360px;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-4px);
+      }
+    }
+  }
+
+  @include respond-mobile {
+    .feature-col {
+      padding: 0;
+      align-items: center;
+    }
+
+    .feature-item {
+      text-align: center;
+
+      .feature-text p {
+        max-width: 100%;
+      }
+
+      img {
+        max-width: 90%;
+      }
+    }
+  }
+}

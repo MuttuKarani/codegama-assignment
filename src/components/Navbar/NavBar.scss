@@ -1,0 +1,50 @@
+// File: src/scss/_navbar.scss
+@import "variables";
+@import "mixins";
+
+.navbar {
+  position: absolute; // overlay on hero
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+
+  .navbar-container {
+    width: 90%;
+    max-width: $max-width;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo img {
+    height: 42px;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    li a {
+      color: #fff;
+      font-weight: 500;
+      font-size: 0.95rem;
+      @include transition(color, 0.18s);
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  @include respond-mobile {
+    .nav-links {
+      display: none;
+    }
+  }
+}

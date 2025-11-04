@@ -1,0 +1,51 @@
+// File: src/scss/_dashboard.scss
+@import "variables";
+@import "mixins";
+
+.dashboard-section {
+  padding: 6rem 1rem;
+  text-align: center;
+  position: relative;
+  color: #fff;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.6) 0%,
+    $background-color 70%
+  );
+
+  .dashboard-container {
+    max-width: 1000px;
+    margin: 0 auto 2rem;
+    border-radius: 20px;
+    overflow: hidden;
+    @include card-base;
+  }
+  .dashboard-image {
+    width: 100%;
+    display: block;
+  }
+
+  .brand-logos {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    opacity: 0.9;
+    margin-top: 1.5rem;
+    img {
+      height: 34px;
+      @include transition(transform, 0.25s);
+      &:hover {
+        transform: scale(1.08);
+      }
+    }
+  }
+
+  @include respond-mobile {
+    padding: 4rem 1rem;
+    .brand-logos img {
+      height: 28px;
+    }
+  }
+}

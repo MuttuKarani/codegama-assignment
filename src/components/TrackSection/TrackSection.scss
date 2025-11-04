@@ -1,0 +1,65 @@
+// File: src/scss/_track.scss
+@import "variables";
+@import "mixins";
+
+.track-section {
+  padding: 6rem 1rem;
+  background: $background-color;
+  color: #fff;
+  text-align: left;
+  .track-text {
+    max-width: 1200px;
+    margin: 0 auto 1.5rem;
+    padding: 0 1rem;
+    h2 {
+      font-size: 2.8rem;
+    }
+  }
+  .track-cards {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .track-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 340px;
+    transition: transform 0.25s;
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(0, 255, 110, 0.06);
+    }
+    .track-img {
+      width: 100%;
+    }
+    .track-info {
+      padding: 1rem;
+      h3 {
+        margin: 0 0 0.6rem;
+      }
+      p {
+        color: $muted;
+      }
+    }
+  }
+
+  @include respond-mobile {
+    text-align: center;
+    .track-text h2 {
+      font-size: 2.1rem;
+    }
+    .track-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+    .track-card {
+      max-width: 92%;
+    }
+  }
+}

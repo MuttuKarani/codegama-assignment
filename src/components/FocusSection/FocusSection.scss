@@ -1,0 +1,139 @@
+// File: src/scss/_focus.scss
+@import "variables";
+@import "mixins";
+
+.focus-section {
+  padding: 6rem 1rem;
+  text-align: center;
+  background: $background-color;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+
+  .focus-content {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: $muted;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+  }
+
+  /* ===============================
+     Focus Buttons
+     =============================== */
+  .focus-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+
+    button {
+      background: rgba(255, 255, 255, 0.06);
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-2px);
+      }
+
+      &.active {
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+
+      .orange {
+        background: linear-gradient(90deg, #ff9f43, #ff6b00);
+      }
+
+      .purple {
+        background: linear-gradient(90deg, #9c6bff, #5f3dc4);
+      }
+    }
+  }
+
+  /* ===============================
+     Video / Media Area
+     =============================== */
+  .focus-video {
+    max-width: 850px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+
+    img,
+    video {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  /* ===============================
+     Grid Background
+     =============================== */
+  .focus-grid {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) perspective(800px) rotateX(60deg);
+    width: 100%;
+    height: 200px;
+    opacity: 0.25;
+    background-image: repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.03) 0,
+        rgba(255, 255, 255, 0.03) 1px,
+        transparent 1px,
+        transparent 20px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.03) 0,
+        rgba(255, 255, 255, 0.03) 1px,
+        transparent 1px,
+        transparent 20px
+      );
+  }
+
+  /* ===============================
+     Responsive Adjustments
+     =============================== */
+  @include respond-mobile {
+    h2 {
+      font-size: 1.9rem;
+    }
+
+    .focus-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .focus-video {
+      max-width: 95%;
+    }
+  }
+}
