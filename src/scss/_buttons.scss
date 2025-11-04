@@ -1,0 +1,57 @@
+/* ===============================
+   Buttons
+   =============================== */
+
+.button {
+  background-color: $primary-color;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  @include transition(all, 0.3s, ease);
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: darken($primary-color, 10%);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.3);
+  }
+}
+
+/* Secondary Button (optional variant) */
+.button-secondary {
+  background-color: transparent;
+  color: $primary-color;
+  border: 2px solid $primary-color;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  @include transition(all, 0.3s, ease);
+
+  &:hover {
+    background-color: $primary-color;
+    color: #fff;
+  }
+}
+
+/* Responsive Button Adjustments */
+@media (max-width: 768px) {
+  .button,
+  .button-secondary {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1.1rem;
+  }
+}
