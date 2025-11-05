@@ -9,11 +9,10 @@
 
   .comparison-table-wrapper {
     width: 100%;
-    overflow-x: auto; /* enables horizontal scroll */
-    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     margin-bottom: 2rem;
 
-    /* optional: hide scrollbar but keep scroll functionality */
     &::-webkit-scrollbar {
       height: 6px;
     }
@@ -128,8 +127,6 @@
             align-items: center;
             justify-content: center;
           }
-
-          /* ✅ Tick styling (green bg, black icon) */
           .check-bg {
             background-color: #00ff80;
             .check {
@@ -138,8 +135,6 @@
               height: 18px;
             }
           }
-
-          /* ❌ Cross styling (green X, no bg) */
           .cross {
             color: #00ff80;
             width: 20px;
@@ -149,7 +144,7 @@
       }
     }
 
-    /* Highlighted (Metaforms) column */
+    // Metaforms column
     .highlight {
       background: linear-gradient(180deg, #0a4525, #0c5229);
       position: relative;
@@ -176,10 +171,7 @@
       }
     }
   }
-
-  /* ===============================
-     Bottom Section
-     =============================== */
+  //  Bottom Section
   .bottom-section {
     display: flex;
     justify-content: center;

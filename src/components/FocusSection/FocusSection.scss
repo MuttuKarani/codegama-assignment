@@ -32,7 +32,7 @@
     margin-bottom: 2rem;
   }
 
-  /* Toggle Buttons */
+  // Toggle Buttons
   .focus-buttons {
     display: flex;
     justify-content: center;
@@ -78,7 +78,7 @@
     }
   }
 
-  /* Video */
+  // Video
   .focus-video {
     display: flex;
     justify-content: center;
@@ -98,7 +98,7 @@
     }
   }
 
-  /* 3D Grid at Bottom */
+  // 3D Grid at Bottom
   .focus-grid {
     position: absolute;
     bottom: 0;
@@ -147,7 +147,7 @@
     }
   }
 
-  /* Responsive */
+  // Responsive
   @include respond-mobile {
     h2 {
       font-size: 2rem;
