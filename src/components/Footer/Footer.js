@@ -6,30 +6,40 @@ const Footer = () => {
     <section
       className="manage-footer"
       style={{
-        backgroundImage: "url('/assets/footer-img.png')", // Background image
+        backgroundImage: "url('/assets/footer-img.png')",
       }}
     >
       <div className="manage-content">
-        {/* Left Section */}
         <div className="manage-left">
           <h1>
             Manage your sales <br /> and analytics at one <br /> place
           </h1>
 
           <div className="manage-sub">
-            <img
-              src="/assets/arrow.png"
-              alt="Arrow Icon"
-              className="arrow-icon"
-            />
-            <p>
-              Empowering Your Projects, <br />
-              Enhancing Your Success, Every <br />
-              Step of the Way.
-            </p>
+            <div className="sub-left">
+              <img
+                src="/assets/arrow.png"
+                alt="Arrow Icon"
+                className="arrow-icon"
+              />
+              <p>
+                Empowering Your Projects, <br />
+                Enhancing Your Success, Every <br />
+                Step of the Way.
+              </p>
+            </div>
+
+            <div className="vertical-dotted-line"></div>
+
+            <div className="sub-right">
+              <h4>Download our App</h4>
+              <div className="app-buttons">
+                <img src="/assets/play-store.png" alt="Google Play" />
+                <img src="/assets/app-store.png" alt="App Store" />
+              </div>
+            </div>
           </div>
 
-          {/* ✅ Social Icons with Valid Links */}
           <div className="social-icons">
             <a
               href="https://linkedin.com/company/ropflow"
@@ -59,21 +69,9 @@ const Footer = () => {
 
           <p className="footer-credit">© ropflow.in</p>
         </div>
-
-        {/* Divider */}
-        <div className="footer-divider"></div>
-
-        {/* Right Section */}
-        <div className="manage-right">
-          <h4>Download our App</h4>
-          <div className="app-buttons">
-            <img src="/assets/play-store.png" alt="Google Play" />
-            <img src="/assets/app-store.png" alt="App Store" />
-          </div>
-        </div>
       </div>
 
-      {/* Privacy Text */}
+      {/* Keep one Privacy Policy text */}
       <p className="privacy-text">Privacy Policy</p>
     </section>
   );

@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "./components/Navbar/NavBar";
 import HeroModule from "./components/HeroModule";
 import DashboardSection from "./components/Dashboard/DashboardSection";
 import ManageDashboard from "./components/Dashboard/ManageDashboard";

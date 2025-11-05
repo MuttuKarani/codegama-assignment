@@ -4,7 +4,7 @@ import "../../scss/custom.scss";
 const TestimonialsSection = () => {
   return (
     <section className="testimonials-section">
-      {/* --- Logo Row --- */}
+      {/* Logo Row  */}
       <div className="logo-row">
         <img src="/assets/item1.png" alt="Brand 1" />
         <img src="/assets/item2.png" alt="Brand 2" />
@@ -14,7 +14,7 @@ const TestimonialsSection = () => {
         <img src="/assets/item6.png" alt="Brand 6" />
       </div>
 
-      {/* --- Testimonials --- */}
+      {/* Testimonials  */}
       <div className="testimonial-container">
         <div className="testimonial-box">
           <p>
