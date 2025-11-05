@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+CodeGama - UI Developer Machine Task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a fully responsive landing page built as part of a UI Developer evaluation task.  
+The design was provided in the assignment (UI-Task.zip), along with assets.  
+The goal was to recreate the layout using **React.js & SCSS**, following clean UI principles and modern frontend practices.
 
-## Available Scripts
+## Project Highlights
 
-In the project directory, you can run:
+- Built using **React.js**
+- Styled with **SASS / SCSS**
+- **No UI frameworks** (No Bootstrap, Tailwind etc.)
+- Fully responsive — **Mobile / Tablet / Desktop**
+- Smooth hover animations & transitions
+- Pixel-perfect layout structure
+- Local assets used correctly
+- Organized SCSS architecture (variables, mixins, component styles)
+- Clean, modular React components
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+| Tech              | Purpose                             |
+| ----------------- | ----------------------------------- |
+| React.js          | UI Component Structure              |
+| SASS / SCSS       | Styling, responsiveness & variables |
+| JavaScript (ES6+) | Functionality                       |
+| Git & GitHub      | Version control                     |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Assignment Requirements from company
 
-### `npm test`
+Requirement - Status  
+Use SCSS / SASS - Done
+Fully Responsive - Done
+Hover Animations - Done
+No CSS libraries - Done
+No Online Code Generators -Done
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Demo Video and Screenshot of the task
 
-### `npm run build`
+Please find the drive link below for demo video and screenshot:
+https://drive.google.com/drive/folders/1WzsDb8pBqqvW8Ebw1seCjUTUahKJKs-b?usp=drive_link
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Run Locally
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+git clone https://github.com/MuttuKarani/codegama-assignment.git
+cd your-repo-name
+npm install
+npm start
