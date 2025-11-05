@@ -1,6 +1,10 @@
 @import "variables";
 @import "mixins";
 
+html {
+  scroll-behavior: smooth;
+}
+
 .navbar {
   position: absolute;
   top: 0;
@@ -47,3 +51,87 @@
     }
   }
 }
+
+// .navbar {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   z-index: 20;
+//   padding: 1rem 2rem;
+//   display: flex;
+//   justify-content: center;
+
+//   .navbar-container {
+//     width: 90%;
+//     max-width: $max-width;
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//   }
+
+//   .logo img {
+//     height: 42px;
+//   }
+
+//   .nav-links {
+//     list-style: none;
+//     display: flex;
+//     gap: 2rem;
+//     margin: 0;
+//     padding: 0;
+//     align-items: center;
+
+//     li a {
+//       color: #fff;
+//       font-weight: 500;
+//       font-size: 0.95rem;
+//       @include transition(color, 0.18s);
+
+//       &:hover {
+//         color: $primary-color;
+//       }
+//     }
+//   }
+
+//   /* Hamburger icon hidden on desktop */
+//   .hamburger {
+//     display: none;
+//     cursor: pointer;
+//     color: #fff;
+//     z-index: 25; // above menu
+//   }
+
+//   @include respond-mobile {
+//     .hamburger {
+//       display: block;
+//     }
+
+//     .nav-links {
+//       display: flex;
+//       flex-direction: column;
+//       position: absolute;
+//       top: 60px;
+//       right: 1.5rem;
+//       background: rgba(0, 0, 0, 0.95);
+//       padding: 1.5rem 2rem;
+//       border-radius: 12px;
+//       width: 200px;
+//       gap: 1rem;
+//       transform: translateY(-20px);
+//       opacity: 0;
+//       pointer-events: none;
+//       transition: all 0.3s ease;
+
+//       &.open {
+//         transform: translateY(0);
+//         opacity: 1;
+//         pointer-events: auto;
+//       }
+
+//       li a {
+//         font-size: 1rem;
+//       }
+//     }
+//   }
+// }

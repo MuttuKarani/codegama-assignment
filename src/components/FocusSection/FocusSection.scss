@@ -32,7 +32,7 @@
     margin-bottom: 2rem;
   }
 
-  /* Toggle Buttons */
+  // Toggle Buttons
   .focus-buttons {
     display: flex;
     justify-content: center;
@@ -78,7 +78,7 @@
     }
   }
 
-  /* Video */
+  // Video
   .focus-video {
     display: flex;
     justify-content: center;
@@ -95,58 +95,59 @@
         width: 100%;
         display: block;
       }
-
-      .play-button {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(255, 255, 255, 0.1);
-        border: 2px solid rgba(255, 255, 255, 0.25);
-        border-radius: 50%;
-        width: 70px;
-        height: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        backdrop-filter: blur(10px);
-        transition: all 0.3s ease;
-
-        &:hover {
-          background: rgba(255, 255, 255, 0.2);
-          transform: translate(-50%, -50%) scale(1.1);
-        }
-      }
     }
   }
 
-  /* 3D Grid at Bottom */
+  // 3D Grid at Bottom
   .focus-grid {
     position: absolute;
-    bottom: -60px;
-    left: 50%;
-    transform: translateX(-50%) perspective(800px) rotateX(65deg);
-    width: 140%;
+    bottom: 0;
+    left: 0;
+    right: 0;
     height: 300px;
-    background-image: repeating-linear-gradient(
-        0deg,
-        rgba(255, 255, 255, 0.05) 0,
-        rgba(255, 255, 255, 0.05) 1px,
-        transparent 1px,
-        transparent 40px
-      ),
-      repeating-linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0.05) 0,
-        rgba(255, 255, 255, 0.05) 1px,
-        transparent 1px,
-        transparent 40px
+    overflow: hidden;
+    pointer-events: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -50px;
+      left: 50%;
+      transform: translateX(-50%) perspective(600px) rotateX(60deg);
+      width: 150%;
+      height: 500px;
+      background-image: repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 39px,
+          rgba(255, 255, 255, 0.15) 39px,
+          rgba(255, 255, 255, 0.15) 40px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 59px,
+          rgba(255, 255, 255, 0.15) 59px,
+          rgba(255, 255, 255, 0.15) 60px
+        );
+      mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 20%,
+        black 60%,
+        transparent 100%
       );
-    opacity: 0.4;
-    filter: drop-shadow(0 -2px 12px rgba(255, 255, 255, 0.05));
+      -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 20%,
+        black 60%,
+        transparent 100%
+      );
+    }
   }
 
-  /* Responsive */
+  // Responsive
   @include respond-mobile {
     h2 {
       font-size: 2rem;
