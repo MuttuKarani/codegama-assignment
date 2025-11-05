@@ -4,7 +4,7 @@
 .feature-highlights {
   padding: 6rem 2rem;
   text-align: center;
-  background: $background-color; // ✅ Removed glow (no green radial gradient)
+  background: $background-color;
   color: #fff;
 
   .feature-container {
@@ -16,7 +16,7 @@
     margin: 0 auto;
     position: relative;
 
-    // ✅ Dotted vertical divider lines
+    //  Dotted vertical divider lines
     &::before,
     &::after {
       content: "";
@@ -45,7 +45,7 @@
       width: 64px;
       height: auto;
       margin-bottom: 1.25rem;
-      filter: none; // ✅ Removed green glow
+      filter: none;
     }
 
     h3 {
@@ -64,14 +64,9 @@
 
     &:hover {
       transform: translateY(-6px);
-
-      img {
-        filter: none; // ✅ No glow on hover
-      }
     }
   }
-
-  /* ✅ MOBILE: Stack vertically one by one */
+  // MOBILE:
   @include respond-mobile {
     padding: 4rem 1rem;
 

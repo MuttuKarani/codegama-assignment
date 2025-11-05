@@ -1,9 +1,8 @@
-// File: src/scss/_navbar.scss
 @import "variables";
 @import "mixins";
 
 .navbar {
-  position: absolute; // overlay on hero
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;

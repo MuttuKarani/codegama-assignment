@@ -22,7 +22,7 @@
     }
   }
 
-  /* --- Grid Layout --- */
+  // Grid Layout
   .blog-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -80,7 +80,6 @@
       }
     }
 
-    /* --- Last card spans full width --- */
     .blog-card.wide {
       grid-column: span 2;
       img {
@@ -88,8 +87,7 @@
       }
     }
   }
-
-  /* --- Responsive adjustments --- */
+  // Responsive adjustments
   @include respond-mobile {
     .blog-grid {
       grid-template-columns: 1fr;
