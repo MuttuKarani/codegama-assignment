@@ -7,15 +7,31 @@
   color: #fff;
   background: $background-color;
 
+  .comparison-table-wrapper {
+    width: 100%;
+    overflow-x: auto; /* enables horizontal scroll */
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    margin-bottom: 2rem;
+
+    /* optional: hide scrollbar but keep scroll functionality */
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 3px;
+    }
+  }
+
   h2 {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 3rem;
   }
 
-  /* ===============================
-     Comparison Table
-     =============================== */
+  //  Comparison Table
+
   .comparison-table {
     display: flex;
     justify-content: center;
@@ -27,6 +43,7 @@
     margin: 0 auto 4rem;
     overflow: hidden;
     gap: 2rem;
+    min-width: 900px;
   }
 
   .table-left {
@@ -76,13 +93,12 @@
         gap: 0.5rem;
         min-height: 24px;
 
-        &::before {
-          content: "";
-          display: inline-block;
-          width: 20px;
-          height: 20px;
-          background: rgba(255, 255, 255, 0.15);
-          border-radius: 4px;
+        /* 🎥 Video Icon beside Typeform */
+        &.with-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
         }
       }
 
@@ -103,10 +119,37 @@
           align-items: center;
           justify-content: center;
           min-height: 70px;
+
+          .icon-wrapper {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          /* ✅ Tick styling (green bg, black icon) */
+          .check-bg {
+            background-color: #00ff80;
+            .check {
+              color: #000;
+              width: 18px;
+              height: 18px;
+            }
+          }
+
+          /* ❌ Cross styling (green X, no bg) */
+          .cross {
+            color: #00ff80;
+            width: 20px;
+            height: 20px;
+          }
         }
       }
     }
 
+    /* Highlighted (Metaforms) column */
     .highlight {
       background: linear-gradient(180deg, #0a4525, #0c5229);
       position: relative;
@@ -152,8 +195,6 @@
     border-radius: 20px;
     padding: 2.5rem;
     flex: 1;
-    min-width: 350px;
-    max-width: 450px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -177,11 +218,27 @@
 
   .stats {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex: 1;
-    min-width: 350px;
     gap: 2rem;
+    min-width: 350px;
+
+    .row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &.row-top {
+        justify-content: center;
+      }
+
+      &.row-bottom {
+        justify-content: space-between;
+        width: 100%;
+        max-width: 600px;
+        gap: 2rem;
+      }
+    }
 
     .stat {
       flex: 1;
@@ -191,7 +248,7 @@
         font-size: 2.5rem;
         font-weight: 700;
         margin: 0 0 0.5rem 0;
-        background: linear-gradient(90deg, #00ff80, #00cc66);
+        background: white;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -207,160 +264,34 @@
     }
 
     .divider {
-      width: 1px;
-      height: 60px;
-      border-left: 1px dashed rgba(255, 255, 255, 0.2);
-    }
-  }
+      &.vertical {
+        width: 1px;
+        height: 60px;
+        border-left: 1px dashed rgba(255, 255, 255, 0.2);
+      }
 
-  /* ===============================
-     Responsive Adjustments
-     =============================== */
-  @media (max-width: 1024px) {
-    .comparison-table {
-      padding: 2rem 1.5rem;
+      &.horizontal {
+        width: 100%;
+        max-width: 600px;
+        height: 1px;
+        border-top: 1px dashed rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    // Responsive Adjustments
+    @media (max-width: 768px) {
       gap: 1.5rem;
-    }
 
-    .table-left p {
-      font-size: 0.95rem;
-      padding: 1.5rem 0;
-      min-height: 60px;
-    }
-
-    .table-columns .column ul li {
-      padding: 1.5rem 0;
-      min-height: 60px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    padding: 4rem 1.5rem;
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .comparison-table {
-      flex-direction: row;
-      align-items: stretch;
-      padding: 2rem 1rem;
-      gap: 1rem;
-      overflow-x: auto;
-      overflow-y: hidden;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(0, 255, 100, 0.3) rgba(255, 255, 255, 0.1);
-
-      &::-webkit-scrollbar {
-        height: 8px;
+      .row-bottom {
+        flex-direction: column;
+        gap: 1.25rem;
       }
 
-      &::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 10px;
+      .divider {
+        display: none;
       }
-
-      &::-webkit-scrollbar-thumb {
-        background: rgba(0, 255, 100, 0.3);
-        border-radius: 10px;
-
-        &:hover {
-          background: rgba(0, 255, 100, 0.5);
-        }
-      }
-    }
-
-    .table-left {
-      padding: 0 1rem;
-      text-align: left;
-      flex-shrink: 0;
-      min-width: 200px;
-
-      p {
-        padding: 1.2rem 0;
-        font-size: 0.9rem;
-        min-height: auto;
-        white-space: normal;
-      }
-    }
-
-    .table-columns {
-      flex-direction: row;
-      gap: 0.75rem;
-      flex-shrink: 0;
-
-      .column {
-        padding: 1.5rem 0.75rem;
-        min-width: 100px;
-        flex-shrink: 0;
-
-        h3 {
-          font-size: 0.75rem;
-          margin-bottom: 1rem;
-          white-space: nowrap;
-
-          &::before {
-            width: 16px;
-            height: 16px;
-          }
-        }
-
-        ul li {
-          font-size: 1.2rem;
-          padding: 1.2rem 0;
-          min-height: auto;
-        }
-      }
-
-      .highlight {
-        background: linear-gradient(180deg, #0a4525, #0c5229);
-        box-shadow: 0 0 20px rgba(0, 255, 100, 0.3);
-
-        h3 {
-          font-weight: 600;
-          font-size: 0.85rem;
-        }
-
-        .highlight-header .diagonal-line {
-          top: -15px;
-          width: 120%;
-          height: 2px;
-        }
-      }
-    }
-
-    .bottom-section {
-      flex-direction: column;
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .product-card {
-      min-width: 100%;
-      max-width: 400px;
-      padding: 2rem;
-      gap: 1.25rem;
-
-      img.product-hunt {
-        max-width: 240px;
-      }
-
-      img.ranking-badge {
-        max-width: 280px;
-      }
-    }
-
-    .stats {
-      flex-direction: column;
-      min-width: 100%;
-      gap: 2rem;
-      align-items: center;
 
       .stat {
-        text-align: center;
-
         h3 {
           font-size: 2.2rem;
         }
@@ -368,81 +299,6 @@
         span {
           font-size: 0.7rem;
         }
-      }
-
-      .divider {
-        display: none;
-      }
-    }
-  }
-
-  @media (max-width: 480px) {
-    padding: 3rem 1rem;
-
-    h2 {
-      font-size: 1.75rem;
-    }
-
-    .comparison-table {
-      padding: 1.5rem 0.75rem;
-    }
-
-    .table-left {
-      padding: 0 0.75rem;
-      min-width: 180px;
-
-      p {
-        font-size: 0.85rem;
-        padding: 1rem 0;
-      }
-    }
-
-    .table-columns {
-      gap: 0.5rem;
-
-      .column {
-        padding: 1.2rem 0.6rem;
-        min-width: 90px;
-
-        h3 {
-          font-size: 0.7rem;
-
-          &::before {
-            width: 14px;
-            height: 14px;
-          }
-        }
-
-        ul li {
-          font-size: 1rem;
-          padding: 1rem 0;
-        }
-      }
-
-      .highlight h3 {
-        font-size: 0.75rem;
-      }
-    }
-
-    .product-card {
-      padding: 0.5rem;
-
-      img.product-hunt {
-        max-width: 200px;
-      }
-
-      img.ranking-badge {
-        max-width: 240px;
-      }
-    }
-
-    .stats .stat {
-      h3 {
-        font-size: 2rem;
-      }
-
-      span {
-        font-size: 0.65rem;
       }
     }
   }
