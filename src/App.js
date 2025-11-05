@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import NavBar from "./components/Navbar/NavBar";
 import HeroModule from "./components/HeroModule";
 import DashboardSection from "./components/Dashboard/DashboardSection";
 import ManageDashboard from "./components/Dashboard/ManageDashboard";
@@ -11,22 +12,39 @@ import FeatureComparison from "./components/Features/FeatureComparison";
 import BlogSection from "./components/Blogs/BlogSection";
 import FaqSection from "./components/FAQ/FaqSection";
 import Footer from "./components/Footer/Footer";
+import "./scss/custom.scss";
 
 function App() {
+  useEffect(() => {
+    document.documentElement.style.scrollBehavior = "smooth";
+  }, []);
+
   return (
     <>
-      <HeroModule />
-      <DashboardSection />
-      <ManageDashboard />
-      <FeatureHighlights />
-      <AdvancedFeatures />
-      <TrackSection />
-      <FocusSection />
-      <TestimonialsSection />
-      <FeatureComparison />
-      <BlogSection />
-      <FaqSection />
-      <Footer />
+      <NavBar />
+      <section id="features">
+        <HeroModule />
+        <DashboardSection />
+        <ManageDashboard />
+        <FeatureHighlights />
+      </section>
+
+      <section id="resources">
+        <AdvancedFeatures />
+        <TrackSection />
+        <FocusSection />
+        <TestimonialsSection />
+      </section>
+
+      <section id="comparison">
+        <FeatureComparison />
+      </section>
+
+      <section id="blogs">
+        <BlogSection />
+        <FaqSection />
+        <Footer />
+      </section>
     </>
   );
 }

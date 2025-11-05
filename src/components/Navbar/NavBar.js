@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 import "../../scss/custom.scss";
 
 const NavBar = () => {
@@ -12,16 +12,32 @@ const NavBar = () => {
 
         <ul className="nav-links">
           <li>
-            <Link to="/features">Features</Link>
+            <Link
+              to="features"
+              smooth={true}
+              duration={600}
+              offset={-70} // adjusts for navbar height
+            >
+              Features
+            </Link>
           </li>
+
           <li>
-            <Link to="/resources">Resources</Link>
+            <Link to="resources" smooth={true} duration={600} offset={-70}>
+              Resources
+            </Link>
           </li>
+
           <li>
-            <Link to="/comparison">Comparison</Link>
+            <Link to="comparison" smooth={true} duration={600} offset={-70}>
+              Comparison
+            </Link>
           </li>
+
           <li>
-            <Link to="/blogs">Blogs</Link>
+            <Link to="blogs" smooth={true} duration={600} offset={-70}>
+              Blogs
+            </Link>
           </li>
         </ul>
       </div>
