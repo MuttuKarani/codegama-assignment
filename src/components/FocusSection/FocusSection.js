@@ -18,7 +18,20 @@ const FocusSection = () => {
         </div>
 
         <div className="focus-video">
-          <img src="/assets/lapbanner.png" alt="Focus Preview" />
+          <div className="video-wrapper">
+            <img src="/assets/lapbanner.png" alt="Focus Preview" />
+            <div className="play-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="white"
+                width="36px"
+                height="36px"
+              >
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
         </div>
 
         <div className="focus-grid"></div>

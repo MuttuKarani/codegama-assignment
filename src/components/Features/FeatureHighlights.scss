@@ -4,11 +4,7 @@
 .feature-highlights {
   padding: 6rem 2rem;
   text-align: center;
-  background: radial-gradient(
-    circle at center,
-    rgba(0, 255, 110, 0.05),
-    $background-color
-  );
+  background: $background-color; // ✅ Removed glow (no green radial gradient)
   color: #fff;
 
   .feature-container {
@@ -18,10 +14,9 @@
     gap: 3rem;
     max-width: 1200px;
     margin: 0 auto;
-    border-left: 1px dashed rgba(255, 255, 255, 0.06);
-    border-right: 1px dashed rgba(255, 255, 255, 0.06);
     position: relative;
 
+    // ✅ Dotted vertical divider lines
     &::before,
     &::after {
       content: "";
@@ -29,7 +24,7 @@
       top: 0;
       bottom: 0;
       width: 1px;
-      background: rgba(255, 255, 255, 0.06);
+      border-left: 1px dotted rgba(255, 255, 255, 0.15);
     }
 
     &::before {
@@ -50,7 +45,7 @@
       width: 64px;
       height: auto;
       margin-bottom: 1.25rem;
-      filter: drop-shadow(0 4px 10px rgba(0, 255, 110, 0.2));
+      filter: none; // ✅ Removed green glow
     }
 
     h3 {
@@ -69,8 +64,9 @@
 
     &:hover {
       transform: translateY(-6px);
+
       img {
-        filter: drop-shadow(0 6px 14px rgba(0, 255, 110, 0.4));
+        filter: none; // ✅ No glow on hover
       }
     }
   }
@@ -82,7 +78,6 @@
     .feature-container {
       flex-direction: column;
       align-items: center;
-      border: none;
 
       &::before,
       &::after {
@@ -94,7 +89,7 @@
       width: 100%;
       max-width: 360px;
       padding: 2rem 0;
-      border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+      border-bottom: 1px dotted rgba(255, 255, 255, 0.15);
 
       &:last-child {
         border-bottom: none;

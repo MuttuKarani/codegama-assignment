@@ -1,65 +1,102 @@
-// File: src/scss/_track.scss
 @import "variables";
 @import "mixins";
 
 .track-section {
-  padding: 6rem 1rem;
-  background: $background-color;
+  background: #000;
   color: #fff;
-  text-align: left;
-  .track-text {
-    max-width: 1200px;
-    margin: 0 auto 1.5rem;
-    padding: 0 1rem;
-    h2 {
-      font-size: 2.8rem;
-    }
-  }
-  .track-cards {
-    display: flex;
-    gap: 1.25rem;
-    justify-content: center;
-    align-items: stretch;
-    flex-wrap: wrap;
+  padding: 6rem 1.5rem;
+
+  .track-content {
     max-width: 1200px;
     margin: 0 auto;
-  }
-  .track-card {
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 12px;
-    overflow: hidden;
-    width: 100%;
-    max-width: 340px;
-    transition: transform 0.25s;
-    &:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 30px rgba(0, 255, 110, 0.06);
-    }
-    .track-img {
-      width: 100%;
-    }
-    .track-info {
-      padding: 1rem;
-      h3 {
-        margin: 0 0 0.6rem;
-      }
-      p {
-        color: $muted;
-      }
+
+    h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      line-height: 1.2;
+      text-align: left;
     }
   }
 
+  .track-cards {
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .track-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 360px;
+    border-radius: 24px;
+    overflow: hidden;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &.green {
+      background: linear-gradient(180deg, #0a3b1a 0%, #0f5a2e 100%);
+    }
+
+    &.purple {
+      background: linear-gradient(180deg, #3a1f66 0%, #512b85 100%);
+    }
+
+    &.brown {
+      background: linear-gradient(180deg, #3d2b1e 0%, #5a3a28 100%);
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 30px rgba(0, 255, 110, 0.15);
+    }
+
+    .track-info {
+      padding: 1.5rem;
+      text-align: left;
+
+      h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+      }
+
+      p {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+    }
+
+    .track-img {
+      width: 100%;
+      border-radius: 0 0 24px 24px;
+      object-fit: cover;
+    }
+  }
+
+  /* Responsive */
   @include respond-mobile {
     text-align: center;
-    .track-text h2 {
-      font-size: 2.1rem;
+
+    .track-content h2 {
+      font-size: 2.2rem;
+      text-align: center;
     }
+
     .track-cards {
       flex-direction: column;
       align-items: center;
+      gap: 1.5rem;
     }
+
     .track-card {
-      max-width: 92%;
+      max-width: 90%;
     }
   }
 }
